@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img {
+    width: 100%;
+}
+
+.emoji-bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    transform: rotate(-30deg);
+    
+    /* RIBBON EMOJI (🎗️) - Change '80' to resize the emoji */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ctext x='100' y='140' font-size='80' text-anchor='middle'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E");
+    
+    background-repeat: repeat;
+    background-size: 150px 150px; /* Spacing between ribbons */
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+:root {
+    --primarycolor: #FDE8A5;
+    --textcolor: #4A4036;
+    --hoverbg: #F6D365;
+    --hovertext: #FFF6E0;
+    --lightyellow: #FEF8C6;
+    --lightpink: #FFE6EE;
+
+    --titletext: #F2CB4B;
+
+    --fontsizelarge: 1.9rem;
+    --fontsizelarge2: 1.5rem;
+    --fontsizemedium: 1.12rem;
+    --fontsizesmall: 0.9rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.abouttitle {
+    text-align: center;
+    padding: 60px 0 100px;
+    text-transform: uppercase;
+    font-size: var(--fontsizelarge2);
+    color: var(--textcolor);
+}
+
+.abouttitle::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    background: var(--primarycolor);
+}
+
+.tutorialtitle {
+    text-align: center;
+    padding: 60px 0 100px;
+    text-transform: uppercase;
+    font-size: var(--fontsizelarge2);
+    color: var(--textcolor);
+}
+
+.tutorialtitle::after {
+    content: "";
+    width: 90px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    background: var(--primarycolor);
+}
+
+/* Navigation Section Stying */
+.section-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1300px;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background: var(--primarycolor);
+}
+
+header .navbar {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primarycolor);
+}
+
+.navbar .navlogo .logotext{
+    color: var(--textcolor);
+    background: var(--primarycolor);
+}
+
+.navbar .navmenu {
+    display: flex;
+    gap: 10px;
+    background: var(--primarycolor);
+}
+
+.navbar .navmenu .navlink {
+    padding: 10px;
+    color: var(--textcolor);
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
+
+.navbar .navmenu .navlink:hover {
+    color: var(--hovertext);
+    background-color: var(--hoverbg);
+}
+
+.navbar :where(#menu-close-button, #menu-open-button) {
+    display: none;
+}
+
+/* Main Section Stying */
+.mainsection {
+    min-height: 100vh;
+    background: rgba(255, 230, 238, 0.4);
+}
+
+.mainsection .maincontent {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    min-height: 100vh;
+    color: var(--textcolor);
+    justify-content: space-between;
+}
+
+.mainsection .maindetails .title {
+    font-size: var(--fontsizelarge);
+    color: var(--titletext);
+    font-family: "Lucida Handwriting", cursive;
+}
+
+.mainsection .maindetails .subtitle {
+    margin-top: 3px;
+    max-width: 80%;
+    font-size: var(--fontsizelarge2);
+    font-weight: 600;
+}
+
+.mainsection .maindetails .description {
+    max-width: 70%;
+    margin: 24px 0 40px;
+    font-size: var(--fontsizemedium);
+}
+
+.mainsection .maindetails .description2 {
+    margin-top: -40px;
+    font-size: var(--fontsizemedium);
+}
+
+.mainsection .mainimgwrapper {
+    max-width: 500px;
+    margin-right: 30px;
+}
+
+/* About Section Stying */
+.aboutsection {
+    padding: 120px 0;
+    background-color: rgba(254, 248, 198, 0.4);
+}
+
+.aboutsection .aboutcontent {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aboutsection .aboutimgwrapper .aboutimg {
+    width: 400px;
+    height: 400px;
+    margin-left: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.aboutsection .aboutdetails .abouttitle {
+    padding: 0;
+}
+
+.aboutsection .aboutdetails {
+    max-width: 50%;
+}
+
+.aboutsection .aboutdetails .text {
+    line-height: 30px;
+    margin: 50px 100px 30px;
+    text-align: center;
+    font-size: var(--fontsizemedium);
+    color: var(--textcolor);
+}
+
+/* Tutorial Section Styling */
+.tutorialsection {
+    padding: 50px 0 100px;
+    background: rgba(255, 230, 238, 0.4);
+}
+
+.tutorialsection .slider-wrapper {
+    overflow: hidden;
+    margin: 0 60px 50px;
+}
+
+.tutorialsection .tutorial {
+    display: flex;
+    padding: 35px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tutorialsection .tutorial .tutorialimg {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 50px;
+    border-radius: 50%;
+}
+
+.tutorialsection .tutorial .name {
+    margin-bottom: 16px;
+    font-size: var(--fontsizemedium);
+    color: var(--textcolor);
+}
+
+.tutorialsection .tutorial .videolink {
+    border-radius: 15px;
+    font-size: var(--fontsizemedium);
+}
+
+.tutorialsection .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    margin-top: 100px;
+    background: var(--titletext);
+}
+
+.tutorialsection .swiper-slide-button {
+    margin-top: -50px;
+    color: var(--titletext);
+    transition: 0.3s ease;
+}
+
+.tutorialsection .swiper-slide-button:hover {
+    color: var(--primarycolor);
+}
+
+/* Footer Section Styling */
+.footersection {
+    padding: 20px 0;
+    background: var(--textcolor);
+}
+
+.footersection .footercontent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footersection :where(.copyright, .policylink) {
+    margin: 0 50px;
+    color: white;
+}
+
+.footersection .policytext .policylink {
+    transition: 0.3s ease;
+}
+
+.footersection .policytext .policylink:hover {
+    color: var(--hoverbg);
+}
+
+/* Small Screen Responsive Stying */
+@media screen and (max-width: 900px) {
+    :root {
+        --fontsizelarge: 1.5rem;
+        --fontsizelarge2: 1.2rem;
+        --fontsizemedium: 1.0rem;
+        --fontsizesmall: 0.9rem;
+    }
+
+    body.show-mobile-menu header::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar :where(#menu-close-button, #menu-open-button) {
+        display: block;
+        font-size: var(--fontsizelarge2);
+    }
+
+    .navbar #menu-close-button {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+
+    .navbar #menu-open-button {
+        color: white;
+    }
+
+    .navbar .navmenu {
+        display: block;
+        position: fixed;
+        left: -300px;
+        top: 0;
+        width: 300px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        background-color: white;
+        transition: left 0.2s ease;
+    }
+
+    body.show-mobile-menu .navbar .navmenu {
+        left: 0;
+    }
+
+    .navbar .navmenu .navlink {
+        color: var(--textcolor);
+        display: block;
+        margin-top: 17px;
+        font-size: var(--fontsizemedium);
+    }
+
+    .mainsection .maincontent {
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .mainsection .maindetails :is(.subtitle, .description, .description2), .aboutsection .aboutdetails {
+        max-width: 100%;
+    }
+
+    .mainsection .mainimgwrapper {
+        max-width: 300px;
+        margin-right: 0;
+    }
+
+    .aboutsection .aboutcontent {
+        gap: 70px;
+        flex-direction: column;
+    }
+
+    .aboutsection .aboutimgwrapper .aboutimg {
+        width: 100%;
+        height: 100%;
+        margin-right: 75px;
+        max-width: 250px;
+        aspect-ratio: 1;
+    }
+}
