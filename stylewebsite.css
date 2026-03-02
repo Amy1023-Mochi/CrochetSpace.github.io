@@ -222,7 +222,8 @@ header .navbar {
 .aboutsection .aboutdetails .text {
     line-height: 30px;
     margin: 50px 100px 30px;
-    text-align: center;
+    text-align: justify;
+    text-align-last: center;
     font-size: var(--fontsizemedium);
     color: var(--textcolor);
 }
@@ -398,4 +399,5 @@ header .navbar {
         max-width: 250px;
         aspect-ratio: 1;
     }
+
 }
